@@ -1,0 +1,13 @@
+{
+  "siteName": "Armstrong Law Firm",
+  "siteUrl": "https://armstrong-law-firm.vercel.app",
+  "defaultImage": "/images/logo.png",
+  "defaultImageAlt": "Armstrong Law Firm logo",
+  "locale": "en_GH",
+  "pageImages": {
+    "index.html": {
+      "image": "/images/hero-lawyers-1.png",
+      "imageAlt": "Armstrong Law Firm — trusted corporate law advisors"
+    }
+  }
+}
