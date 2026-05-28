@@ -4,10 +4,47 @@
   "defaultImage": "/images/logo.png",
   "defaultImageAlt": "Armstrong Law Firm logo",
   "locale": "en_GH",
+  "language": "en",
+  "themeColor": "#1e293b",
+  "business": {
+    "telephone": "+233301234567",
+    "email": "info@armstronglaw.com",
+    "address": {
+      "streetAddress": "12 Independence Avenue, Ridge",
+      "addressLocality": "Accra",
+      "addressRegion": "Greater Accra",
+      "postalCode": "",
+      "addressCountry": "GH"
+    },
+    "areaServed": ["Ghana", "West Africa"],
+    "priceRange": "$$"
+  },
   "pageImages": {
     "index.html": {
       "image": "/images/hero-lawyers-1.png",
       "imageAlt": "Armstrong Law Firm — trusted corporate law advisors"
     }
-  }
+  },
+  "pages": [
+    { "file": "index.html", "path": "/", "dataPage": "home", "priority": 1.0, "changefreq": "weekly", "breadcrumb": [{ "name": "Home", "path": "/" }] },
+    { "file": "about.html", "path": "/about.html", "dataPage": "about", "priority": 0.9, "changefreq": "monthly", "breadcrumb": [{ "name": "Home", "path": "/" }, { "name": "About Us", "path": "/about.html" }] },
+    { "file": "team.html", "path": "/team.html", "dataPage": "team", "priority": 0.8, "changefreq": "monthly", "breadcrumb": [{ "name": "Home", "path": "/" }, { "name": "Our Team", "path": "/team.html" }] },
+    { "file": "careers.html", "path": "/careers.html", "dataPage": "careers", "priority": 0.7, "changefreq": "weekly", "breadcrumb": [{ "name": "Home", "path": "/" }, { "name": "Careers", "path": "/careers.html" }] },
+    { "file": "expertise.html", "path": "/expertise.html", "dataPage": "expertise", "priority": 0.9, "changefreq": "monthly", "breadcrumb": [{ "name": "Home", "path": "/" }, { "name": "Expertise", "path": "/expertise.html" }] },
+    { "file": "corporate-commercial.html", "path": "/corporate-commercial.html", "dataPage": "corporate", "priority": 0.8, "changefreq": "monthly", "breadcrumb": [{ "name": "Home", "path": "/" }, { "name": "Expertise", "path": "/expertise.html" }, { "name": "Corporate & Commercial", "path": "/corporate-commercial.html" }] },
+    { "file": "dispute-resolution.html", "path": "/dispute-resolution.html", "dataPage": "dispute", "priority": 0.8, "changefreq": "monthly", "breadcrumb": [{ "name": "Home", "path": "/" }, { "name": "Expertise", "path": "/expertise.html" }, { "name": "Dispute Resolution", "path": "/dispute-resolution.html" }] },
+    { "file": "regulatory-compliance.html", "path": "/regulatory-compliance.html", "dataPage": "compliance", "priority": 0.8, "changefreq": "monthly", "breadcrumb": [{ "name": "Home", "path": "/" }, { "name": "Expertise", "path": "/expertise.html" }, { "name": "Regulatory Compliance", "path": "/regulatory-compliance.html" }] },
+    { "file": "real-estate.html", "path": "/real-estate.html", "dataPage": "realestate", "priority": 0.8, "changefreq": "monthly", "breadcrumb": [{ "name": "Home", "path": "/" }, { "name": "Expertise", "path": "/expertise.html" }, { "name": "Real Estate & Construction", "path": "/real-estate.html" }] },
+    { "file": "employment-immigration.html", "path": "/employment-immigration.html", "dataPage": "employment", "priority": 0.8, "changefreq": "monthly", "breadcrumb": [{ "name": "Home", "path": "/" }, { "name": "Expertise", "path": "/expertise.html" }, { "name": "Employment & Immigration", "path": "/employment-immigration.html" }] },
+    { "file": "technology-ip.html", "path": "/technology-ip.html", "dataPage": "technology", "priority": 0.8, "changefreq": "monthly", "breadcrumb": [{ "name": "Home", "path": "/" }, { "name": "Expertise", "path": "/expertise.html" }, { "name": "Technology & IP", "path": "/technology-ip.html" }] },
+    { "file": "energy-resources.html", "path": "/energy-resources.html", "dataPage": "energy", "priority": 0.8, "changefreq": "monthly", "breadcrumb": [{ "name": "Home", "path": "/" }, { "name": "Expertise", "path": "/expertise.html" }, { "name": "Energy & Natural Resources", "path": "/energy-resources.html" }] },
+    { "file": "family-trust-probate.html", "path": "/family-trust-probate.html", "dataPage": "family", "priority": 0.8, "changefreq": "monthly", "breadcrumb": [{ "name": "Home", "path": "/" }, { "name": "Expertise", "path": "/expertise.html" }, { "name": "Family, Trust & Probate", "path": "/family-trust-probate.html" }] },
+    { "file": "highlights.html", "path": "/highlights.html", "dataPage": "highlights", "priority": 0.8, "changefreq": "weekly", "breadcrumb": [{ "name": "Home", "path": "/" }, { "name": "Work Highlights", "path": "/highlights.html" }] },
+    { "file": "publications.html", "path": "/publications.html", "dataPage": "publications", "priority": 0.7, "changefreq": "weekly", "breadcrumb": [{ "name": "Home", "path": "/" }, { "name": "Publications", "path": "/publications.html" }] },
+    { "file": "newsletter.html", "path": "/newsletter.html", "dataPage": "newsletter", "priority": 0.6, "changefreq": "monthly", "breadcrumb": [{ "name": "Home", "path": "/" }, { "name": "Newsletter", "path": "/newsletter.html" }] },
+    { "file": "testimonials.html", "path": "/testimonials.html", "dataPage": "testimonials", "priority": 0.7, "changefreq": "monthly", "breadcrumb": [{ "name": "Home", "path": "/" }, { "name": "Client Testimonials", "path": "/testimonials.html" }] },
+    { "file": "business-support.html", "path": "/business-support.html", "dataPage": "support", "priority": 0.7, "changefreq": "monthly", "breadcrumb": [{ "name": "Home", "path": "/" }, { "name": "Business Support", "path": "/business-support.html" }] },
+    { "file": "contact.html", "path": "/contact.html", "dataPage": "contact", "priority": 0.9, "changefreq": "monthly", "breadcrumb": [{ "name": "Home", "path": "/" }, { "name": "Contact", "path": "/contact.html" }] },
+    { "file": "disclaimer.html", "path": "/disclaimer.html", "dataPage": "disclaimer", "priority": 0.3, "changefreq": "yearly", "breadcrumb": [{ "name": "Home", "path": "/" }, { "name": "Disclaimer", "path": "/disclaimer.html" }] }
+  ]
 }
