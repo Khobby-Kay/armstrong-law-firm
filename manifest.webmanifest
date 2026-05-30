@@ -1,0 +1,19 @@
+{
+  "name": "Armstrong Law Firm",
+  "short_name": "Armstrong Law",
+  "description": "Trusted advisors in corporate, commercial, and dispute resolution law.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1e293b",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/images/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

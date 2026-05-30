@@ -6,6 +6,8 @@
   "locale": "en_GH",
   "language": "en",
   "themeColor": "#1e293b",
+  "manifest": "/manifest.webmanifest",
+  "keywords": "law firm Ghana, corporate law Accra, commercial lawyers Ghana, dispute resolution, regulatory compliance, business law West Africa, legal advisors Ghana, Armstrong Law Firm",
   "business": {
     "telephone": "+233301234567",
     "email": "info@armstronglaw.com",
@@ -26,7 +28,13 @@
     }
   },
   "pages": [
-    { "file": "index.html", "path": "/", "dataPage": "home", "priority": 1.0, "changefreq": "weekly", "breadcrumb": [{ "name": "Home", "path": "/" }] },
+    { "file": "index.html", "path": "/", "dataPage": "home", "priority": 1.0, "changefreq": "weekly", "breadcrumb": [{ "name": "Home", "path": "/" }], "faq": [
+      { "q": "How do I schedule a consultation?", "a": "Simply book online via our contact page, call us, or message us on WhatsApp. We offer a confidential, obligation-free initial discussion to understand your needs." },
+      { "q": "What areas of law does Armstrong Law Firm practise?", "a": "We advise across eight core areas: corporate & commercial, dispute resolution, regulatory compliance, real estate & construction, employment & immigration, technology & IP, energy & natural resources, and family, trust & probate." },
+      { "q": "Do you work with international clients and investors?", "a": "Yes. A significant part of our work involves advising international investors and businesses entering or operating in Ghana and West Africa, supported by our cross-border capability and global network." },
+      { "q": "How are your fees structured?", "a": "We offer transparent fee arrangements tailored to each matter, including fixed fees, hourly rates, and retainers. We agree the structure with you upfront, so there are no surprises." },
+      { "q": "How quickly can you respond to an urgent matter?", "a": "For time-sensitive and emergency matters, we prioritise rapid response. Contact us by phone or WhatsApp and our team will arrange immediate assistance where possible." }
+    ] },
     { "file": "about.html", "path": "/about.html", "dataPage": "about", "priority": 0.9, "changefreq": "monthly", "breadcrumb": [{ "name": "Home", "path": "/" }, { "name": "About Us", "path": "/about.html" }] },
     { "file": "team.html", "path": "/team.html", "dataPage": "team", "priority": 0.8, "changefreq": "monthly", "breadcrumb": [{ "name": "Home", "path": "/" }, { "name": "Our Team", "path": "/team.html" }] },
     { "file": "careers.html", "path": "/careers.html", "dataPage": "careers", "priority": 0.7, "changefreq": "weekly", "breadcrumb": [{ "name": "Home", "path": "/" }, { "name": "Careers", "path": "/careers.html" }] },

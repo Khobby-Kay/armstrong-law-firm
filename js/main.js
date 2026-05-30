@@ -219,9 +219,67 @@
     });
   }
 
+  function initCounters() {
+    var counters = document.querySelectorAll('[data-count]');
+    if (!counters.length) return;
+
+    function animate(el) {
+      var target = parseFloat(el.getAttribute('data-count')) || 0;
+      var suffix = el.getAttribute('data-suffix') || '';
+      var duration = 1600;
+      var start = null;
+
+      function step(timestamp) {
+        if (!start) start = timestamp;
+        var progress = Math.min((timestamp - start) / duration, 1);
+        var eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.round(target * eased) + suffix;
+        if (progress < 1) requestAnimationFrame(step);
+        else el.textContent = target + suffix;
+      }
+
+      requestAnimationFrame(step);
+    }
+
+    if (!('IntersectionObserver' in window)) {
+      counters.forEach(function (el) {
+        el.textContent = el.getAttribute('data-count') + (el.getAttribute('data-suffix') || '');
+      });
+      return;
+    }
+
+    var observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            animate(entry.target);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.4 }
+    );
+
+    counters.forEach(function (el) { observer.observe(el); });
+  }
+
+  function initFaq() {
+    var items = document.querySelectorAll('.faq__item');
+    if (!items.length) return;
+
+    items.forEach(function (item) {
+      item.addEventListener('toggle', function () {
+        if (!item.open) return;
+        items.forEach(function (other) {
+          if (other !== item) other.open = false;
+        });
+      });
+    });
+  }
+
   function initScrollAnimations() {
     var animateElements = document.querySelectorAll(
-      '.expertise-teaser li, .practice-list__item, .about__metric, .highlights__item, .team__card, .insights__card'
+      '.expertise-teaser li, .practice-list__item, .about__metric, .highlights__item, .team__card, .insights__card, .why__card, .process__step, .industries__item, .testimonial-card, .faq__item'
     );
 
     if (!('IntersectionObserver' in window)) return;
@@ -257,6 +315,8 @@
     initHeaderScroll();
     initScrollTop();
     initForms();
+    initCounters();
+    initFaq();
     initScrollAnimations();
   }
 

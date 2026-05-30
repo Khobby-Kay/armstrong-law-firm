@@ -30,10 +30,20 @@ function buildSocialMeta(fileName, title, description) {
   const imageUrl = absoluteUrl(imagePath);
   const url = pageUrl(fileName);
 
-  return [
+  const lines = [
     '  <meta name="robots" content="index, follow, max-image-preview:large">',
     '  <meta name="author" content="' + escapeAttr(config.siteName) + '">',
-    '  <meta name="theme-color" content="' + config.themeColor + '">',
+    '  <meta name="theme-color" content="' + config.themeColor + '">'
+  ];
+
+  if (config.keywords) {
+    lines.push('  <meta name="keywords" content="' + escapeAttr(config.keywords) + '">');
+  }
+  if (config.manifest) {
+    lines.push('  <link rel="manifest" href="' + config.manifest + '">');
+  }
+
+  return lines.concat([
     '  <link rel="alternate" hreflang="' + config.language + '" href="' + url + '">',
     '  <link rel="canonical" href="' + url + '">',
     '  <meta property="og:type" content="website">',
@@ -49,7 +59,7 @@ function buildSocialMeta(fileName, title, description) {
     '  <meta name="twitter:description" content="' + escapeAttr(description) + '">',
     '  <meta name="twitter:image" content="' + imageUrl + '">',
     '  <meta name="twitter:image:alt" content="' + escapeAttr(imageAlt) + '">'
-  ].join('\n');
+  ]).join('\n');
 }
 
 function organizationSchema() {
@@ -141,6 +151,20 @@ function buildPageSchema(pageConfig, title, description) {
     });
   }
 
+  if (Array.isArray(pageConfig.faq) && pageConfig.faq.length) {
+    graph.push({
+      '@type': 'FAQPage',
+      '@id': url + '#faq',
+      mainEntity: pageConfig.faq.map(function (item) {
+        return {
+          '@type': 'Question',
+          name: item.q,
+          acceptedAnswer: { '@type': 'Answer', text: item.a }
+        };
+      })
+    });
+  }
+
   return {
     '@context': 'https://schema.org',
     '@graph': graph
@@ -156,6 +180,8 @@ function stripExistingSeoBlocks(content) {
   return content
     .replace(/\s*<meta name="robots"[^>]*>\n?/g, '\n')
     .replace(/\s*<meta name="author"[^>]*>\n?/g, '\n')
+    .replace(/\s*<meta name="keywords"[^>]*>\n?/g, '\n')
+    .replace(/\s*<link rel="manifest"[^>]*>\n?/g, '\n')
     .replace(/\s*<meta name="theme-color"[^>]*>\n?/g, '\n')
     .replace(/\s*<link rel="alternate" hreflang="[^"]+"[^>]*>\n?/g, '\n')
     .replace(/\s*<link rel="canonical"[^>]*>\n?/g, '\n')

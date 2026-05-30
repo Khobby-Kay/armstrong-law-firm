@@ -1,27 +1,10 @@
 (function () {
   'use strict';
 
-  var pages = {
-    home: { label: 'Home', path: 'index.html' },
-    about: { label: 'About Us', path: 'about.html' },
-    team: { label: 'Our Team', path: 'team.html' },
-    careers: { label: 'Careers', path: 'careers.html' },
-    expertise: { label: 'Expertise', path: 'expertise.html' },
-    corporate: { label: 'Corporate & Commercial', path: 'corporate-commercial.html' },
-    dispute: { label: 'Dispute Resolution', path: 'dispute-resolution.html' },
-    compliance: { label: 'Regulatory Compliance', path: 'regulatory-compliance.html' },
-    realestate: { label: 'Real Estate & Construction', path: 'real-estate.html' },
-    employment: { label: 'Employment & Immigration', path: 'employment-immigration.html' },
-    technology: { label: 'Technology & IP', path: 'technology-ip.html' },
-    energy: { label: 'Energy & Natural Resources', path: 'energy-resources.html' },
-    family: { label: 'Family, Trust & Probate', path: 'family-trust-probate.html' },
-    highlights: { label: 'Work Highlights', path: 'highlights.html' },
-    publications: { label: 'Publications', path: 'publications.html' },
-    newsletter: { label: 'Newsletter', path: 'newsletter.html' },
-    testimonials: { label: 'Client Testimonials', path: 'testimonials.html' },
-    support: { label: 'Business Support', path: 'business-support.html' },
-    contact: { label: 'Contact', path: 'contact.html' },
-    disclaimer: { label: 'Disclaimer Notice', path: 'disclaimer.html' }
+  var CONTACT = {
+    phoneDisplay: '+233 30 123 4567',
+    phoneHref: 'tel:+233301234567',
+    email: 'info@armstronglaw.com'
   };
 
   function isActive(key) {
@@ -50,10 +33,14 @@
             '<li class="nav__item nav__item--dropdown">' +
               '<a href="expertise.html" class="nav__link nav__link--parent' + isActive('expertise') + isActive('corporate') + isActive('dispute') + isActive('compliance') + isActive('realestate') + '">Expertise</a>' +
               '<ul class="nav__dropdown">' +
-                '<li><a href="corporate-commercial.html">Corporate & Commercial</a></li>' +
+                '<li><a href="corporate-commercial.html">Corporate &amp; Commercial</a></li>' +
                 '<li><a href="dispute-resolution.html">Dispute Resolution</a></li>' +
                 '<li><a href="regulatory-compliance.html">Regulatory Compliance</a></li>' +
-                '<li><a href="real-estate.html">Real Estate & Construction</a></li>' +
+                '<li><a href="real-estate.html">Real Estate &amp; Construction</a></li>' +
+                '<li><a href="employment-immigration.html">Employment &amp; Immigration</a></li>' +
+                '<li><a href="technology-ip.html">Technology &amp; IP</a></li>' +
+                '<li><a href="energy-resources.html">Energy &amp; Natural Resources</a></li>' +
+                '<li><a href="family-trust-probate.html">Family, Trust &amp; Probate</a></li>' +
               '</ul>' +
             '</li>' +
             '<li class="nav__item"><a href="highlights.html" class="nav__link' + isActive('highlights') + '">Work Highlights</a></li>' +
@@ -67,7 +54,7 @@
             '</li>' +
             '<li class="nav__item"><a href="contact.html" class="nav__link' + isActive('contact') + '">Contact</a></li>' +
             '<li class="nav__item nav__item--cta">' +
-              '<a href="contact.html" class="btn btn--primary btn--sm">Book Appointment</a>' +
+              '<a href="contact.html" class="btn btn--primary btn--sm">Book Consultation</a>' +
             '</li>' +
           '</ul>' +
         '</nav>' +
@@ -77,47 +64,33 @@
   }
 
   function footerHTML() {
+    var year = new Date().getFullYear();
     return (
-      '<footer class="footer">' +
+      '<footer class="footer footer--clean">' +
         '<div class="container">' +
-          '<div class="footer__grid">' +
-            '<div class="footer__brand">' +
+          '<div class="footer__clean-top">' +
+            '<div class="footer__brand footer__brand--clean">' +
               '<a href="index.html" class="nav__logo">' +
                 '<img src="images/logo.png" alt="Armstrong Law Firm" class="nav__logo-img">' +
               '</a>' +
-              '<p>Your trusted advisors in corporate, commercial, and dispute resolution law.</p>' +
+              '<p>Trusted advisors in corporate, commercial, and dispute resolution law.</p>' +
             '</div>' +
-            '<div class="footer__col">' +
-              '<h4>Expertise</h4>' +
-              '<ul>' +
-                '<li><a href="corporate-commercial.html">Corporate & Commercial</a></li>' +
-                '<li><a href="dispute-resolution.html">Dispute Resolution</a></li>' +
-                '<li><a href="regulatory-compliance.html">Regulatory Compliance</a></li>' +
-                '<li><a href="real-estate.html">Real Estate</a></li>' +
-              '</ul>' +
-            '</div>' +
-            '<div class="footer__col">' +
-              '<h4>Insights</h4>' +
-              '<ul>' +
-                '<li><a href="publications.html">Publications</a></li>' +
-                '<li><a href="newsletter.html">Newsletter</a></li>' +
-                '<li><a href="testimonials.html">Testimonials</a></li>' +
-                '<li><a href="highlights.html">Work Highlights</a></li>' +
-              '</ul>' +
-            '</div>' +
-            '<div class="footer__col">' +
-              '<h4>Contact</h4>' +
-              '<ul>' +
-                '<li><a href="tel:+233301234567">+233 30 123 4567</a></li>' +
-                '<li><a href="mailto:info@armstronglaw.com">info@armstronglaw.com</a></li>' +
-                '<li>12 Independence Avenue, Ridge</li>' +
-                '<li>Accra, Ghana</li>' +
-              '</ul>' +
+            '<nav class="footer__clean-links" aria-label="Footer">' +
+              '<a href="about.html">About</a>' +
+              '<a href="expertise.html">Expertise</a>' +
+              '<a href="publications.html">Insights</a>' +
+              '<a href="contact.html">Contact</a>' +
+            '</nav>' +
+            '<div class="footer__clean-contact">' +
+              '<a href="' + CONTACT.phoneHref + '">' + CONTACT.phoneDisplay + '</a>' +
+              '<a href="mailto:' + CONTACT.email + '">' + CONTACT.email + '</a>' +
             '</div>' +
           '</div>' +
           '<div class="footer__bottom">' +
-            '<p>&copy; 2026 Armstrong Law Firm. All Rights Reserved.</p>' +
-            '<a href="disclaimer.html">Disclaimer Notice</a>' +
+            '<p>&copy; ' + year + ' Armstrong Law Firm. All Rights Reserved.</p>' +
+            '<nav class="footer__legal" aria-label="Legal">' +
+              '<a href="disclaimer.html">Disclaimer</a>' +
+            '</nav>' +
           '</div>' +
         '</div>' +
       '</footer>'
@@ -129,6 +102,14 @@
 
   if (headerEl) headerEl.innerHTML = headerHTML();
   if (footerEl) footerEl.innerHTML = footerHTML();
+
+  if (!document.querySelector('.skip-link')) {
+    var skip = document.createElement('a');
+    skip.className = 'skip-link';
+    skip.href = '#main';
+    skip.textContent = 'Skip to content';
+    document.body.insertBefore(skip, document.body.firstChild);
+  }
 
   document.dispatchEvent(new Event('layoutReady'));
 })();

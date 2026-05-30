@@ -2,7 +2,7 @@
 
 .page-hero {
   position: relative;
-  padding: calc(var(--header-height) + 4rem) 0 4rem;
+  padding: calc(var(--header-total) + 4rem) 0 4rem;
   background: var(--color-navy);
   color: var(--color-white);
   overflow: hidden;
@@ -46,13 +46,7 @@
 }
 
 .page-hero__desc {
-  margin-top: 16px;
-  max-width: 600px;
-  color: rgba(255, 255, 255, 0.75);
-  font-size: 17px;
-  line-height: 1.7;
-  margin-left: auto;
-  margin-right: auto;
+  display: none;
 }
 
 .breadcrumb {
@@ -367,19 +361,21 @@
   .page-grid,
   .contact-split {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 24px;
   }
 
   .page-hero {
-    padding: calc(var(--header-height) + 2.5rem) 0 2.5rem;
+    padding: calc(var(--header-height) + 1.6rem) 0 1.8rem;
   }
 
   .page-hero__title {
-    font-size: 1.85rem;
+    font-size: 1.65rem;
+    line-height: 1.25;
   }
 
   .breadcrumb {
     font-size: 12px;
+    margin-bottom: 14px;
   }
 
   .contact-split__heading {
@@ -387,13 +383,72 @@
   }
 
   .contact__form {
-    padding: 24px;
+    padding: 20px;
   }
 
   .any-question,
   .cta-banner {
-    margin-top: 60px;
-    padding: 70px 0;
+    margin-top: 40px;
+    padding: 56px 0;
     background-attachment: scroll;
+  }
+
+  .any-question__text {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 22px;
+  }
+
+  .page-content {
+    padding: 56px 0;
+  }
+
+  .page-text p,
+  .page-text li {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .page-grid__image {
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-hero {
+    padding: calc(var(--header-height) + 1.3rem) 0 1.4rem;
+  }
+
+  .page-hero__title {
+    font-size: 1.45rem;
+  }
+
+  .breadcrumb {
+    font-size: 11px;
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+
+  .any-question,
+  .cta-banner {
+    padding: 46px 0;
+  }
+
+  .any-question__title,
+  .cta-banner h2 {
+    font-size: 1.4rem;
+  }
+
+  .any-question__divider,
+  .cta-banner h2::after {
+    margin: 16px auto;
+  }
+
+  .page-content {
+    padding: 48px 0;
+  }
+
+  .contact__form {
+    padding: 16px;
   }
 }

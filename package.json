@@ -1,0 +1,12 @@
+{
+  "name": "armstrong-law-firm",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "serve . -l 8080",
+    "seo": "node scripts/generate-seo.js"
+  },
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
+}
